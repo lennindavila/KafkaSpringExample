@@ -1,0 +1,101 @@
+
+
+Repositorio
+https://globaldevtools.bbva.com/bitbucket/projects/DS_PS_APS/repos/do_aperturacuenta/pull-requests/6/overview
+
+Links
+Link ASO: ssh://git@globaldevtools.bbva.com:7999/ds_ps_aps/servicios_aso.git
+Link AperCuenta: ssh://git@globaldevtools.bbva.com:7999/ds_ps_aps/do_aperturacuenta.git
+Link JAM: ssh://git@globaldevtools.bbva.com:7999/ds_ps_aps/oficinadigital.git
+
+Comandos para clonar ASO:
+git init
+git clone -b feature/listaClientes  ssh://git@globaldevtools.bbva.com:7999/ds_ps_aps/servicios_aso.git
+git checkout -b feature/listaClientes
+
+Comandos para clonar AperturaCuenta:
+git init
+git clone -b ofdigi_developer ssh://git@globaldevtools.bbva.com:7999/ds_ps_aps/do_aperturacuenta.git
+git checkout -b ofdigi_developer
+git pull ofdigi_developer
+
+Comandos para clonar oficinaDigital Jam:
+git init
+git clone -b master ssh://git@globaldevtools.bbva.com:7999/ds_ps_aps/oficinadigital.git
+git checkout -b master
+
+Subir cambios
+git status -s
+git add .
+git commit -m "Comentario"
+git push origin head
+
+Deshacer cambios locales para bajar todo
+git status -s
+git clean -f -d
+git stash
+git pull
+
+**********************************************************************************************
+git push origin HEAD
+git checkout -b feature/listaClientes
+git checkout -b develop
+git commit -m "Estructura base"
+git status -s-
+git add .
+git clone ssh://direccionrepo
+git init
+
+*****************
+para subir a git
+ir al directorio "D:\Lennin\Proyectos\oficinadigitalproxy\servicios_aso\aso_servicios_cliente"
+git status -s
+git add .
+git commit -m "hacer comentario"
+git push origin HEAD
+
+**************
+para bajar cambios git y sobre escribir
+git status -s
+git clean -f -d
+git stash --> importante este comando
+git pull
+
+****************
+git init
+git clone -b ofdigi_developer2  ssh://git@globaldevtools.bbva.com:7999/ds_ps_aps/do_aperturacuenta.git
+git checkout -b ofdigi_developer2
+
+Implementacion de Test Unitario de los servicios
+ - CreateAccountRelatedContract
+ - CreateCardRelatedContract
+ - CreateCustomer
+ - CreateCustomerTerm
+ - ModifyCardActivation
+
+git clone ssh://direccionrepo
+
+git checkout -b feature/paas_listCustomerIndicator
+git commit -m "feature/listCustomerIndicator"
+
+
+git clone -b feature/listaClientes ssh://git@globaldevtools.bbva.com:7999/ds_ps_aps/servicios_aso.git 
+
+feature/paas_listCustomerIndicator
+
+git branch feature/paas_listCustomerIndicator
+
+git checkout -b <branch-name> <origin/branch_name>
+
+https://bitbucket.org/[username]/[repo_name]/branch/[branch_name]
+
+ssh://git@globaldevtools.bbva.com:7999/ds_ps_aps/servicios_aso.git
+
+
+feature/paas_listCustomerIndicator
+
+git clone -b feature/paas_listCustomerIndicator "ssh://user@project.example.com/var/www/git/www"
+git clone -b feature/paas_listCustomerIndicator ssh://git@globaldevtools.bbva.com:7999/ds_ps_aps/servicios_aso.git
+
+
+feature/paas_listCustomerIndicator
