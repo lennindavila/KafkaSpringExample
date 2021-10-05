@@ -1,0 +1,39 @@
+net stop winnat
+net start winnat
+
+cd Proyectos/kafka
+cd kafka
+
+docker rm 5578c3babb0b -f
+docker rm 7f195a39463c -f
+
+docker rmi 9bfa45ff9375 -f
+docker rmi 3667b63e62bc -f
+
+docker-compose -f docker-compose.yml up -d
+
+docker exec -it 3243b7be40d2 /bin/sh
+__consumer_offsets
+
+JTDS4RCE2LJ028194
+
+/opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic notification-push-topic --partitions 5 --replication-factor 1
+/opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic notification-pull-topic --partitions 5 --replication-factor 1
+
+
+/opt/bitnami/kafka/bin/kafka-console-producer.sh --topic notification-topic --bootstrap-server localhost:9092
+
+/opt/bitnami/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic notification-pull-topic 
+{"id":1,"title":"The Matrix","year":1999,"cast":["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving","Joe Pantoliano"],"genres":["Science Fiction"]}.
+{"id":2,"title":"The Matrix","year":1999,"cast":["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving","Joe Pantoliano"],"genres":["Science Fiction"]}.
+{"id":3,"title":"The Matrix","year":1999,"cast":["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving","Joe Pantoliano"],"genres":["Science Fiction"]}.
+{"id":4,"title":"The Matrix","year":1999,"cast":["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving","Joe Pantoliano"],"genres":["Science Fiction"]}.
+{"id":5,"title":"The Matrix","year":1999,"cast":["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving","Joe Pantoliano"],"genres":["Science Fiction"]}.
+{"id":6,"title":"The Matrix","year":1999,"cast":["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving","Joe Pantoliano"],"genres":["Science Fiction"]}.
+{"id":7,"title":"The Matrix","year":1999,"cast":["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving","Joe Pantoliano"],"genres":["Science Fiction"]}.
+{"id":8,"title":"The Matrix","year":1999,"cast":["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving","Joe Pantoliano"],"genres":["Science Fiction"]}.
+{"id":9,"title":"The Matrix","year":1999,"cast":["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving","Joe Pantoliano"],"genres":["Science Fiction"]}.
+{"id":10,"title":"The Matrix","year":1999,"cast":["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving","Joe Pantoliano"],"genres":["Science Fiction"]}.
+{"id":11,"title":"The Matrix","year":1999,"cast":["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving","Joe Pantoliano"],"genres":["Science Fiction"]}.
+
+/opt/bitnami/kafka/bin/kafka-consumer-groups.sh --all-topics --bootstrap-server localhost:9092 --list
